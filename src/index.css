@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #131315;
+    color: #e5e1e4;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+}
+
+/* Custom sleek obsidian scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0e10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2c;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e50914;
+}
+
+/* Giant Editorial PORTFOLIO Display Typography — Crisp Gradient, Zero Glow */
+.portfolio-backdrop-word {
+  font-family: 'Big Shoulders Display', 'Bebas Neue', sans-serif;
+  font-weight: 800;
+  font-size: clamp(5.8rem, 26.5vw, 28.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  padding-top: 0.04em;
+  padding-bottom: 0.06em;
+  transform: scaleY(1.42);
+  transform-origin: top center;
+  background: linear-gradient(
+    to bottom,
+    #e50914 0%,
+    #d4121a 22%,
+    #7a0a10 56%,
+    transparent 98%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle bottom-only fade for transparent PNG cutout torso */
+.cutout-bottom-fade {
+  mask-image: linear-gradient(to bottom, black 0%, black 76%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 76%, transparent 100%);
+}
+
+/* Smooth Editorial Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Print styles for Resume Modal */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-resume,
+  #printable-resume * {
+    visibility: visible;
+  }
+  #printable-resume {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff !important;
+    color: #111111 !important;
+    padding: 24px !important;
+  }
+}
