@@ -77,14 +77,14 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
           </div>
 
           <div className="space-y-1">
-            <p className="font-body-lg text-body-lg text-primary italic font-serif drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+            <p className="font-body-lg text-body-lg text-bone/90 italic font-serif drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
               {profile.greeting}
             </p>
-            <h1 className="font-headline-xl text-[54px] leading-[54px] md:text-[84px] md:leading-[82px] text-on-surface uppercase tracking-tight font-normal drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)]">
+            <h1 className="font-headline-xl text-[54px] leading-[54px] md:text-[84px] md:leading-[82px] text-bone uppercase tracking-tight font-normal drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)]">
               {profile.fullName}
             </h1>
             <div className="inline-block pt-1">
-              <span className="font-label-mono text-label-mono uppercase tracking-widest bg-surface-container-high/90 backdrop-blur-md px-space-sm py-1.5 rounded-sm border border-white/10 text-on-surface inline-block">
+              <span className="font-label-mono text-label-mono uppercase tracking-widest bg-bone text-ink px-space-sm py-1.5 rounded-sm border border-bone-border inline-block font-bold">
                 {profile.professionalTitle}{' '}
                 <span className="text-primary-container">✦</span>{' '}
                 {profile.secondaryTitle}
@@ -93,7 +93,7 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
           </div>
 
           {/* Professional Narrative Intro */}
-          <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed pt-space-xs">
+          <p className="font-body-md text-body-md text-bone/80 max-w-2xl leading-relaxed pt-space-xs">
             {profile.introduction}
           </p>
 
@@ -110,9 +110,9 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
             <button
               type="button"
               onClick={onOpenResume}
-              className="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-lg bg-surface-container-high/90 text-on-surface font-label-mono text-label-mono uppercase tracking-wider border border-white/15 hover:border-primary-container hover:text-primary transition-all"
+              className="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-lg bg-bone text-ink font-label-mono text-label-mono uppercase tracking-wider border border-bone-border hover:bg-bone-light hover:border-primary-container transition-all shadow-[0_4px_20px_rgba(0,0,0,0.35)]"
             >
-              <span className="material-symbols-outlined text-[18px]">download</span>
+              <span className="material-symbols-outlined text-[18px] text-primary-container">download</span>
               <span>PREVIEW RÉSUMÉ [PDF]</span>
             </button>
           </div>
@@ -122,16 +122,16 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
             {profile.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-surface-container-low/80 p-space-sm rounded-lg border border-white/[0.08] backdrop-blur-sm hover:border-primary-container/40 transition-colors"
+                className="bg-surface-container-low/90 p-space-sm rounded-lg border border-bone/15 backdrop-blur-sm hover:border-bone/40 transition-colors"
               >
                 <span
                   className={`font-headline-md text-headline-md font-bold block ${
-                    stat.highlight ? 'text-primary' : 'text-on-surface'
+                    stat.highlight ? 'text-bone' : 'text-primary'
                   }`}
                 >
                   {stat.value}
                 </span>
-                <span className="font-label-tag text-label-tag text-on-surface-variant uppercase tracking-wider">
+                <span className="font-label-tag text-label-tag text-bone/65 uppercase tracking-wider">
                   {stat.label}
                 </span>
               </div>
@@ -229,12 +229,13 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
         )}
       </div>
 
-      {/* Editorial Floating Index Marquee Strip */}
-      <div className="absolute bottom-0 left-0 right-0 py-2.5 border-y border-white/[0.06] bg-surface-container-lowest/85 backdrop-blur-sm overflow-hidden whitespace-nowrap select-none z-30">
-        <div className="animate-marquee font-label-mono text-[11px] text-on-surface-variant uppercase tracking-[0.25em] opacity-70">
+      {/* Editorial Bone White Index Marquee Strip — Dramatic Transition Band */}
+      <div className="absolute bottom-0 left-0 right-0 py-2.5 border-y border-bone-border bg-bone overflow-hidden whitespace-nowrap select-none z-30">
+        <div className="animate-marquee font-label-mono text-[11px] text-ink font-bold uppercase tracking-[0.25em]">
           {[...marqueeItems, ...marqueeItems].map((item, idx) => (
-            <span key={idx} className="mx-6">
-              {item}
+            <span key={idx} className="mx-6 inline-flex items-center gap-2">
+              <span className="text-primary-container">✦</span>
+              <span>{item.replace(/^✦\s*/, '')}</span>
             </span>
           ))}
         </div>

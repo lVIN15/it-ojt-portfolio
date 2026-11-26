@@ -295,22 +295,22 @@ export function ResumeModal({ open, onClose, onDownloadToast }) {
           </div>
         </div>
 
-        {/* Printable ATS Dossier Preview */}
+        {/* Printable Bone White Paper ATS Dossier Preview */}
         <div
           id="printable-resume"
-          className="bg-surface-container-lowest p-6 rounded-xl border border-white/10 space-y-5"
+          className="bg-bone text-ink p-6 rounded-xl border border-bone-border space-y-5 shadow-inner"
         >
-          <div className="border-b border-white/10 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div className="border-b border-bone-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
             <div>
-              <h2 className="font-headline-lg text-3xl uppercase text-on-surface">
+              <h2 className="font-headline-lg text-3xl uppercase text-ink">
                 {profile.formalFullName}
               </h2>
-              <p className="font-label-mono text-xs text-primary uppercase tracking-wider">
+              <p className="font-label-mono text-xs text-primary-container uppercase tracking-wider font-bold">
                 {profile.professionalTitle} • {profile.secondaryTitle}
               </p>
             </div>
-            <div className="font-body-sm text-xs text-on-surface-variant sm:text-right">
-              <div>{profile.contact.email}</div>
+            <div className="font-body-sm text-xs text-ink-muted sm:text-right">
+              <div className="font-semibold text-ink">{profile.contact.email}</div>
               <div>
                 {profile.contact.phone} • {profile.contact.location}
               </div>
@@ -318,47 +318,47 @@ export function ResumeModal({ open, onClose, onDownloadToast }) {
           </div>
 
           <div>
-            <h4 className="font-label-mono text-xs text-primary uppercase tracking-widest mb-1.5">
+            <h4 className="font-label-mono text-xs text-primary-container uppercase tracking-widest mb-1.5 font-bold">
               Professional Summary
             </h4>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-ink-muted leading-relaxed">
               {profile.introduction}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-surface-container p-4 rounded-lg border border-white/[0.06]">
-              <h4 className="font-label-mono text-xs text-primary uppercase tracking-widest mb-2">
+            <div className="bg-bone-light p-4 rounded-lg border border-bone-border">
+              <h4 className="font-label-mono text-xs text-primary-container uppercase tracking-widest mb-2 font-bold">
                 Education
               </h4>
-              <p className="font-headline-sm text-sm text-on-surface uppercase">
+              <p className="font-headline-sm text-sm text-ink uppercase">
                 {educationTimeline[0].degree}
               </p>
-              <p className="font-body-sm text-xs text-on-surface-variant">
+              <p className="font-body-sm text-xs text-ink-muted">
                 {educationTimeline[0].institution} ({educationTimeline[0].period})
               </p>
-              <p className="font-label-mono text-xs text-primary mt-1">
+              <p className="font-label-mono text-xs text-primary-container mt-1 font-bold">
                 {educationTimeline[0].honorsBadge}
               </p>
             </div>
-            <div className="bg-surface-container p-4 rounded-lg border border-white/[0.06]">
-              <h4 className="font-label-mono text-xs text-primary uppercase tracking-widest mb-2">
+            <div className="bg-bone-light p-4 rounded-lg border border-bone-border">
+              <h4 className="font-label-mono text-xs text-primary-container uppercase tracking-widest mb-2 font-bold">
                 Work Experience
               </h4>
-              <p className="font-headline-sm text-sm text-on-surface uppercase">
+              <p className="font-headline-sm text-sm text-ink uppercase">
                 {profile.workExperience.role}
               </p>
-              <p className="font-body-sm text-xs text-on-surface-variant">
+              <p className="font-body-sm text-xs text-ink-muted">
                 {profile.workExperience.company} ({profile.workExperience.period})
               </p>
-              <p className="font-body-sm text-xs text-on-surface-variant mt-1">
+              <p className="font-body-sm text-xs text-ink-muted mt-1">
                 Sensitive file processing &amp; administrative coordination.
               </p>
             </div>
           </div>
 
           <div>
-            <h4 className="font-label-mono text-xs text-primary uppercase tracking-widest mb-2">
+            <h4 className="font-label-mono text-xs text-primary-container uppercase tracking-widest mb-2 font-bold">
               Project Experience
             </h4>
             <div className="space-y-2.5">
@@ -367,10 +367,10 @@ export function ResumeModal({ open, onClose, onDownloadToast }) {
                   key={p.id}
                   className="border-l-2 border-primary-container pl-3"
                 >
-                  <div className="font-headline-sm text-sm text-on-surface">
+                  <div className="font-headline-sm text-sm text-ink">
                     {p.title}
                   </div>
-                  <div className="font-body-sm text-xs text-on-surface-variant">
+                  <div className="font-body-sm text-xs text-ink-muted">
                     {p.contributions}
                   </div>
                 </div>
@@ -378,8 +378,8 @@ export function ResumeModal({ open, onClose, onDownloadToast }) {
             </div>
           </div>
 
-          <div className="pt-3 border-t border-white/10 font-body-sm text-xs text-on-surface-variant">
-            <strong className="text-on-surface">Professional Reference:</strong>{' '}
+          <div className="pt-3 border-t border-bone-border font-body-sm text-xs text-ink-muted">
+            <strong className="text-ink">Professional Reference:</strong>{' '}
             Available upon request (Supervisor at Osorio Rivera Del Rosario Law
             Offices).
           </div>

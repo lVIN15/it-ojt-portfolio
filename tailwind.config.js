@@ -55,6 +55,12 @@ export default {
         "secondary-container": "#a40217",
         "background": "#131315",
         "surface": "#131315",
+        "bone": "#EDE6D8",
+        "bone-light": "#F6F1E7",
+        "bone-dim": "#E1D8C6",
+        "bone-border": "#CFC4B0",
+        "ink": "#131315",
+        "ink-muted": "#4E4A44",
       },
       borderRadius: {
         DEFAULT: "0.25rem",

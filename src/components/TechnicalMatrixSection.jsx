@@ -46,12 +46,12 @@ export default function TechnicalMatrixSection({
     >
       <div className="max-w-[1520px] mx-auto flex flex-col gap-space-lg">
         {/* Section Title & Dynamic Filter Bar */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-white/10 pb-space-md">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-bone/15 pb-space-md">
           <div>
             <span className="font-label-tag text-label-tag text-primary uppercase tracking-widest block mb-space-xs">
               03 // RUNTIME &amp; ECOSYSTEM
             </span>
-            <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-on-surface">
+            <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-bone">
               TECHNICAL MATRIX
             </h2>
           </div>
@@ -80,8 +80,8 @@ export default function TechnicalMatrixSection({
                   onClick={() => onSelectDomain(tab.id)}
                   className={`px-space-sm py-1 rounded font-label-mono text-label-mono uppercase tracking-wider transition-all ${
                     isActive
-                      ? 'bg-primary-container text-on-primary-container shadow-[0_0_15px_rgba(229,9,20,0.4)]'
-                      : 'bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-white/10'
+                      ? 'bg-bone text-ink font-bold shadow-[0_0_15px_rgba(237,230,216,0.2)]'
+                      : 'bg-surface-container-high text-bone/70 hover:text-bone border border-bone/10'
                   }`}
                 >
                   {tab.label}

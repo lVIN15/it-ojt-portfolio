@@ -23,18 +23,18 @@ export default function ProjectsSection({ onOpenProject }) {
     >
       <div className="max-w-[1520px] mx-auto flex flex-col gap-space-xl">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-white/10 pb-space-md">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-bone/15 pb-space-md">
           <div>
             <span className="font-label-tag text-label-tag text-primary uppercase tracking-widest block mb-space-xs">
               01 // EVIDENCE OF WORK
             </span>
-            <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-on-surface">
+            <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-bone">
               FEATURED PROJECTS
             </h2>
           </div>
 
           <div className="flex flex-col md:items-end gap-3">
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-md md:text-right">
+            <p className="font-body-md text-body-md text-bone/75 max-w-md md:text-right">
               Academic capstone, cross-platform revenue tracking, Django web
               platforms, and Agile Scrum deliveries with live deployments and
               verified GitHub repositories.
@@ -50,8 +50,8 @@ export default function ProjectsSection({ onOpenProject }) {
                     onClick={() => setSelectedCategory(opt.id)}
                     className={`px-2.5 py-1 rounded font-label-mono text-[11px] uppercase tracking-wider transition-all ${
                       active
-                        ? 'bg-primary-container text-on-primary-container shadow-[0_0_14px_rgba(229,9,20,0.35)]'
-                        : 'bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-white/10'
+                        ? 'bg-bone text-ink font-bold shadow-[0_0_14px_rgba(237,230,216,0.22)]'
+                        : 'bg-surface-container-high text-bone/70 hover:text-bone border border-bone/10'
                     }`}
                   >
                     {opt.label}
@@ -104,17 +104,17 @@ export default function ProjectsSection({ onOpenProject }) {
                 {/* Card Body */}
                 <div className="p-space-lg flex-1 flex flex-col justify-between space-y-space-md">
                   <div>
-                    <h3 className="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-primary transition-colors">
+                    <h3 className="font-headline-sm text-headline-sm uppercase text-bone group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant pt-2 leading-relaxed">
-                      <strong className="text-on-surface">Overview:</strong>{' '}
+                    <p className="font-body-sm text-body-sm text-bone/75 pt-2 leading-relaxed">
+                      <strong className="text-bone">Overview:</strong>{' '}
                       {project.overview}
                       <br />
-                      <strong className="text-on-surface">Role:</strong>{' '}
+                      <strong className="text-bone">Role:</strong>{' '}
                       {project.responsibilities}
                       <br />
-                      <strong className="text-on-surface">
+                      <strong className="text-bone">
                         Contributions:
                       </strong>{' '}
                       {project.contributions}

@@ -24,11 +24,11 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
               <span className="text-primary-container text-body-sm font-label-mono leading-none select-none">
                 ✦
               </span>
-              <span className="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider group-hover:text-primary-container transition-colors">
+              <span className="font-headline-sm text-headline-sm uppercase text-bone tracking-wider group-hover:text-primary-container transition-colors">
                 {profile.brandLabel}
               </span>
             </div>
-            <span className="font-label-tag text-label-tag text-on-surface-variant uppercase tracking-widest pl-3">
+            <span className="font-label-tag text-label-tag text-bone/65 uppercase tracking-widest pl-3">
               {profile.brandSubtitle}
             </span>
           </a>
@@ -85,9 +85,9 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
             type="button"
             onClick={onOpenInquiry}
             title="Send Quick OJT Interview Inquiry"
-            className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:ring-2 hover:ring-primary-container hover:scale-105 transition-all"
+            className="w-8 h-8 rounded-full bg-bone text-ink flex items-center justify-center hover:ring-2 hover:ring-primary-container hover:scale-105 transition-all"
           >
-            <span className="material-symbols-outlined text-on-primary text-[18px]">
+            <span className="material-symbols-outlined text-ink text-[18px]">
               person
             </span>
           </button>

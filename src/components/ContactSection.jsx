@@ -32,26 +32,27 @@ export default function ContactSection({ onCopyText, onOpenInquiry }) {
       >
         <div className="max-w-[1520px] mx-auto flex flex-col gap-space-lg">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-white/10 pb-space-md">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-bone/15 pb-space-md">
             <div>
               <span className="font-label-tag text-label-tag text-primary uppercase tracking-widest block mb-space-xs">
                 05 // DIRECT CONTACT &amp; TRANSMISSION
               </span>
-              <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-on-surface">
+              <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-bone">
                 GET IN TOUCH
               </h2>
             </div>
             <div className="flex flex-col md:items-end gap-2">
-              <p className="font-body-md text-body-md text-on-surface-variant max-w-md md:text-right">
+              <p className="font-body-md text-body-md text-bone/75 max-w-md md:text-right">
                 Available for Software QA, Testing, Full-Stack, and Scrum OJT
                 interviews and immediate placement.
               </p>
               <button
                 type="button"
                 onClick={onOpenInquiry}
-                className="font-label-mono text-xs text-primary hover:text-white uppercase tracking-wider inline-flex items-center gap-1 transition-colors"
+                className="font-label-mono text-xs text-bone hover:text-primary uppercase tracking-wider inline-flex items-center gap-1 transition-colors"
               >
-                <span>✦ SCHEDULE OJT INTERVIEW</span>
+                <span className="text-primary-container">✦</span>
+                <span>SCHEDULE OJT INTERVIEW</span>
                 <span className="material-symbols-outlined text-[15px]">
                   arrow_outward
                 </span>
