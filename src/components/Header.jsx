@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { navLinks, profile } from '../data/portfolioData'
 
-export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
+export default function Header({ activeSection, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const handleLinkClick = (e, id) => {
@@ -11,24 +11,24 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/85 backdrop-blur-xl border-b border-white/[0.08]">
-      <div className="h-20 w-full px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-white/[0.08]">
+      <div className="h-16 sm:h-20 w-full px-4 sm:px-margin lg:px-margin-desktop flex items-center justify-between gap-2 sm:gap-space-md">
         {/* Brand Identity */}
-        <div className="flex items-center gap-space-md min-w-fit">
+        <div className="flex items-center min-w-0">
           <a
             href="#hero"
             onClick={(e) => handleLinkClick(e, 'hero')}
-            className="group flex flex-col focus:outline-none"
+            className="group flex flex-col focus:outline-none min-w-0"
           >
-            <div className="flex items-center gap-space-xs">
-              <span className="text-primary-container text-body-sm font-label-mono leading-none select-none">
+            <div className="flex items-center gap-1 sm:gap-space-xs min-w-0">
+              <span className="text-primary-container text-xs sm:text-body-sm font-label-mono leading-none select-none shrink-0">
                 ✦
               </span>
-              <span className="font-headline-sm text-headline-sm uppercase text-bone tracking-wider group-hover:text-primary-container transition-colors">
+              <span className="font-headline-sm text-sm sm:text-headline-sm uppercase text-bone tracking-wider group-hover:text-primary-container transition-colors truncate">
                 {profile.brandLabel}
               </span>
             </div>
-            <span className="font-label-tag text-label-tag text-bone/65 uppercase tracking-widest pl-3">
+            <span className="font-label-tag text-[8px] sm:text-label-tag text-bone/65 uppercase tracking-widest pl-3 truncate">
               {profile.brandSubtitle}
             </span>
           </a>
@@ -62,8 +62,8 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
         </nav>
 
         {/* Right Controls */}
-        <div className="flex items-center gap-space-sm sm:gap-space-md">
-          <div className="hidden sm:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-white/[0.08]">
+        <div className="flex items-center gap-2 sm:gap-space-md shrink-0">
+          <div className="hidden md:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-white/[0.08]">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-container" />
@@ -76,30 +76,20 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, 'contact')}
-            className="inline-flex items-center justify-center px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-label-mono text-label-mono uppercase tracking-wider shadow-[0_0_20px_rgba(229,9,20,0.35)] hover:bg-secondary-container hover:shadow-[0_0_28px_rgba(229,9,20,0.6)] transition-all"
+            className="hidden sm:inline-flex items-center justify-center px-3 sm:px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-label-mono text-[11px] sm:text-label-mono uppercase tracking-wider shadow-[0_0_20px_rgba(229,9,20,0.35)] hover:bg-secondary-container hover:shadow-[0_0_28px_rgba(229,9,20,0.6)] transition-all"
           >
             GET IN TOUCH
           </a>
-
-          <button
-            type="button"
-            onClick={onOpenInquiry}
-            title="Send Quick OJT Interview Inquiry"
-            className="w-8 h-8 rounded-full bg-bone text-ink flex items-center justify-center hover:ring-2 hover:ring-primary-container hover:scale-105 transition-all"
-          >
-            <span className="material-symbols-outlined text-ink text-[18px]">
-              person
-            </span>
-          </button>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
-            className="xl:hidden w-9 h-9 rounded-lg bg-surface-container-low border border-white/10 flex items-center justify-center text-on-surface hover:border-primary-container transition-colors"
+            aria-expanded={mobileMenuOpen}
+            className="xl:hidden w-10 h-10 rounded-lg bg-surface-container-low border border-white/15 flex items-center justify-center text-bone hover:border-primary-container transition-colors"
           >
-            <span className="material-symbols-outlined text-[20px]">
+            <span className="material-symbols-outlined text-[22px]">
               {mobileMenuOpen ? 'close' : 'menu'}
             </span>
           </button>
@@ -108,7 +98,17 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl border-b border-white/10 px-margin py-space-md flex flex-col gap-2">
+        <div className="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl border-b border-white/10 px-4 sm:px-margin py-4 flex flex-col gap-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low border border-white/[0.08] mb-1">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-container" />
+            </span>
+            <span className="font-label-tag text-[10px] uppercase text-bone/80 tracking-widest">
+              {profile.availabilityBadge}
+            </span>
+          </div>
+
           {navLinks.map((link) => {
             const isActive = activeSection === link.id
             return (
@@ -116,10 +116,10 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleLinkClick(e, link.id)}
-                className={`px-space-md py-2.5 rounded-lg font-label-mono text-label-mono uppercase tracking-wider flex items-center justify-between transition-all ${
+                className={`px-4 py-3 min-h-[44px] rounded-lg font-label-mono text-xs uppercase tracking-wider flex items-center justify-between transition-all ${
                   isActive
-                    ? 'bg-primary-container/15 text-on-surface border border-primary-container/50'
-                    : 'text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface border border-transparent'
+                    ? 'bg-primary-container/15 text-bone border border-primary-container/50'
+                    : 'text-on-surface-variant hover:bg-surface-container-low hover:text-bone border border-transparent'
                 }`}
               >
                 <span>{link.label}</span>
@@ -129,6 +129,14 @@ export default function Header({ activeSection, onNavigate, onOpenInquiry }) {
               </a>
             )
           })}
+
+          <a
+            href="#contact"
+            onClick={(e) => handleLinkClick(e, 'contact')}
+            className="sm:hidden mt-2 w-full min-h-[44px] inline-flex items-center justify-center px-4 py-3 rounded-lg bg-primary-container text-on-primary-container font-label-mono text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(229,9,20,0.35)]"
+          >
+            GET IN TOUCH
+          </a>
         </div>
       )}
     </header>

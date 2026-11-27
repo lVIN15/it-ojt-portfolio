@@ -9,6 +9,7 @@
     padding: 0;
     background-color: #131315;
     color: #e5e1e4;
+    overflow-x: clip;
   }
 
   body {
@@ -39,7 +40,7 @@
 .portfolio-backdrop-word {
   font-family: 'Big Shoulders Display', 'Bebas Neue', sans-serif;
   font-weight: 800;
-  font-size: clamp(5.8rem, 26.5vw, 28.5rem);
+  font-size: clamp(4.25rem, 25.5vw, 28.5rem);
   line-height: 0.82;
   letter-spacing: -0.02em;
   padding-top: 0.04em;
@@ -53,6 +54,7 @@
     #7a0a10 56%,
     transparent 98%
   );
+  opacity: 0.8;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -83,24 +85,4 @@
 
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-
-/* Print styles for Resume Modal */
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #printable-resume,
-  #printable-resume * {
-    visibility: visible;
-  }
-  #printable-resume {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background: #ffffff !important;
-    color: #111111 !important;
-    padding: 24px !important;
-  }
 }

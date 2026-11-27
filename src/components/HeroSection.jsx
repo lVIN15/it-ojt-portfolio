@@ -41,18 +41,18 @@ function BadgeIcon({ badge }) {
   )
 }
 
-export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }) {
+export default function HeroSection({ onNavigate, onSelectDomain }) {
   const [selectedBadge, setSelectedBadge] = useState(null)
 
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[860px] lg:min-h-[900px] flex flex-col justify-between overflow-hidden bg-surface-container-lowest px-margin lg:px-margin-desktop pt-4 lg:pt-6 pb-16"
+      className="relative w-full min-h-[760px] lg:min-h-[900px] flex flex-col justify-between overflow-hidden bg-surface-container-lowest px-4 sm:px-margin lg:px-margin-desktop pt-4 lg:pt-6 pb-16"
     >
       {/* LAYER 1 (z-10): Giant Edge-to-Edge Tall Condensed PORTFOLIO Headline — Clean Gradient, No Glow */}
       <div
         aria-hidden="true"
-        className="absolute top-3 sm:top-5 lg:top-6 left-0 right-0 w-full px-margin lg:px-margin-desktop flex justify-center pointer-events-none select-none z-10"
+        className="absolute top-3 sm:top-5 lg:top-6 left-0 right-0 w-full px-3 sm:px-margin lg:px-margin-desktop flex justify-center pointer-events-none select-none z-10 overflow-visible"
       >
         <div className="w-full max-w-[1520px] flex justify-center">
           <span className="portfolio-backdrop-word uppercase text-center whitespace-nowrap block">
@@ -62,29 +62,29 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
       </div>
 
       {/* MAIN HERO STAGE: Multi-plane depth (Text z-30 over lower PORTFOLIO, Transparent Portrait z-20 overlapping F O L I O) */}
-      <div className="relative w-full max-w-[1520px] mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-gutter-desktop items-start">
+      <div className="relative w-full max-w-[1520px] mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-gutter-desktop items-start">
         {/* LAYER 3 (z-30): Left Hero Editorial Column — Sits directly over the fading lower half of PORTFOLIO */}
-        <div className="lg:col-span-7 flex flex-col gap-space-md z-30 pt-36 sm:pt-48 lg:pt-[220px] xl:pt-[255px]">
+        <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-space-md z-30 pt-24 sm:pt-40 lg:pt-[220px] xl:pt-[255px] min-w-0">
           {/* Live Status Pill */}
-          <div className="flex items-center gap-space-sm flex-wrap">
-            <span className="font-label-tag text-label-tag px-space-sm py-1 rounded-sm bg-surface-container-lowest/85 text-primary border border-primary-container/40 uppercase tracking-widest flex items-center gap-1.5 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse" />
+          <div className="flex items-center gap-2 sm:gap-space-sm flex-wrap">
+            <span className="font-label-tag text-[9px] sm:text-label-tag px-2.5 sm:px-space-sm py-1 rounded-sm bg-surface-container-lowest/85 text-primary border border-primary-container/40 uppercase tracking-widest flex items-center gap-1.5 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse shrink-0" />
               ✦ {profile.heroStatusPill}
             </span>
-            <span className="font-label-mono text-label-mono text-on-surface-variant tracking-wider">
+            <span className="font-label-mono text-[11px] sm:text-label-mono text-on-surface-variant tracking-wider">
               {profile.heroTermTag}
             </span>
           </div>
 
           <div className="space-y-1">
-            <p className="font-body-lg text-body-lg text-bone/90 italic font-serif drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+            <p className="font-body-lg text-base sm:text-body-lg text-bone/90 italic font-serif drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
               {profile.greeting}
             </p>
-            <h1 className="font-headline-xl text-[54px] leading-[54px] md:text-[84px] md:leading-[82px] text-bone uppercase tracking-tight font-normal drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)]">
+            <h1 className="font-headline-xl text-[44px] leading-[46px] sm:text-[60px] sm:leading-[60px] md:text-[84px] md:leading-[82px] text-bone uppercase tracking-tight font-normal drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)] break-words">
               {profile.fullName}
             </h1>
-            <div className="inline-block pt-1">
-              <span className="font-label-mono text-label-mono uppercase tracking-widest bg-bone text-ink px-space-sm py-1.5 rounded-sm border border-bone-border inline-block font-bold">
+            <div className="inline-block pt-1 max-w-full">
+              <span className="font-label-mono text-[10px] sm:text-label-mono uppercase tracking-widest bg-bone text-ink px-2.5 sm:px-space-sm py-1.5 rounded-sm border border-bone-border inline-block font-bold leading-relaxed">
                 {profile.professionalTitle}{' '}
                 <span className="text-primary-container">✦</span>{' '}
                 {profile.secondaryTitle}
@@ -93,45 +93,44 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
           </div>
 
           {/* Professional Narrative Intro */}
-          <p className="font-body-md text-body-md text-bone/80 max-w-2xl leading-relaxed pt-space-xs">
+          <p className="font-body-sm sm:font-body-md sm:text-body-md text-bone/80 max-w-2xl leading-relaxed pt-space-xs">
             {profile.introduction}
           </p>
 
           {/* Quick CTAs */}
-          <div className="flex flex-wrap items-center gap-space-md pt-space-sm">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-space-md pt-space-sm">
             <button
               type="button"
               onClick={() => onNavigate('projects')}
-              className="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-lg bg-primary-container text-on-primary-container font-label-mono text-label-mono uppercase tracking-widest shadow-[0_0_24px_rgba(229,9,20,0.35)] hover:bg-secondary-container hover:shadow-[0_0_32px_rgba(229,9,20,0.55)] transition-all"
+              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-primary-container text-on-primary-container font-label-mono text-xs sm:text-label-mono uppercase tracking-widest shadow-[0_0_24px_rgba(229,9,20,0.35)] hover:bg-secondary-container hover:shadow-[0_0_32px_rgba(229,9,20,0.55)] transition-all"
             >
               <span className="material-symbols-outlined text-[18px]">terminal</span>
               <span>VIEW PROJECTS</span>
             </button>
             <button
               type="button"
-              onClick={onOpenResume}
-              className="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-lg bg-bone text-ink font-label-mono text-label-mono uppercase tracking-wider border border-bone-border hover:bg-bone-light hover:border-primary-container transition-all shadow-[0_4px_20px_rgba(0,0,0,0.35)]"
+              onClick={() => onNavigate('contact')}
+              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-bone text-ink font-label-mono text-xs sm:text-label-mono uppercase tracking-wider border border-bone-border hover:bg-bone-light hover:border-primary-container transition-all shadow-[0_4px_20px_rgba(0,0,0,0.35)]"
             >
-              <span className="material-symbols-outlined text-[18px] text-primary-container">download</span>
-              <span>PREVIEW RÉSUMÉ [PDF]</span>
+              <span className="material-symbols-outlined text-[18px] text-primary-container">mail</span>
+              <span>GET IN TOUCH</span>
             </button>
           </div>
 
           {/* Academic & Capabilities Proof Strip */}
-          <div className="grid grid-cols-2 gap-space-sm sm:gap-space-md pt-space-sm max-w-md">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-space-md pt-space-sm max-w-md">
             {profile.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-surface-container-low/90 p-space-sm rounded-lg border border-bone/15 backdrop-blur-sm hover:border-bone/40 transition-colors"
+                className="bg-surface-container-low/90 p-3 sm:p-space-sm rounded-lg border border-bone/15 backdrop-blur-sm hover:border-bone/40 transition-colors min-w-0"
               >
                 <span
-                  className={`font-headline-md text-headline-md font-bold block ${
-                    stat.highlight ? 'text-bone' : 'text-primary'
-                  }`}
+                  className={`font-headline-md text-lg sm:text-headline-md font-bold block truncate ${stat.highlight ? 'text-bone' : 'text-primary'
+                    }`}
                 >
                   {stat.value}
                 </span>
-                <span className="font-label-tag text-label-tag text-bone/65 uppercase tracking-wider">
+                <span className="font-label-tag text-[9px] sm:text-label-tag text-bone/65 uppercase tracking-wider block truncate">
                   {stat.label}
                 </span>
               </div>
@@ -141,7 +140,7 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
 
         {/* LAYER 2 (z-20): Transparent PNG Cutout of Elvin's Formal Portrait overlapping F O L I O */}
         <div className="lg:col-span-5 relative flex flex-col items-center justify-start z-20 lg:pt-12 xl:pt-16">
-          <div className="relative w-full max-w-[520px] h-[480px] sm:h-[560px] lg:h-[640px] flex items-end justify-center pointer-events-none">
+          <div className="relative w-full max-w-[340px] sm:max-w-[460px] lg:max-w-[520px] h-[340px] sm:h-[480px] lg:h-[640px] flex items-end justify-center pointer-events-none">
             <img
               src="/images/hero-portrait-cutout.png"
               alt="Formal portrait of Elvin Opalla Lagamo Jr."
@@ -176,11 +175,10 @@ export default function HeroSection({ onNavigate, onOpenResume, onSelectDomain }
                       prev?.id === badge.id ? null : badge
                     )
                   }
-                  className={`group flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-low/90 border transition-all cursor-pointer ${
-                    isSelected
-                      ? 'border-primary-container bg-primary-container/15 shadow-[0_0_16px_rgba(229,9,20,0.35)]'
-                      : 'border-white/10 hover:border-primary-container/60'
-                  }`}
+                  className={`group flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-low/90 border transition-all cursor-pointer ${isSelected
+                    ? 'border-primary-container bg-primary-container/15 shadow-[0_0_16px_rgba(229,9,20,0.35)]'
+                    : 'border-white/10 hover:border-primary-container/60'
+                    }`}
                 >
                   <BadgeIcon badge={badge} />
                   <span className="font-label-mono text-[11px] text-on-surface font-semibold">

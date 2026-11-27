@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { profile } from '../data/portfolioData'
 
-export default function ContactSection({ onCopyText, onOpenInquiry }) {
+export default function ContactSection({ onCopyText }) {
   const { contact } = profile
   const [localTime, setLocalTime] = useState('')
 
@@ -28,7 +28,7 @@ export default function ContactSection({ onCopyText, onOpenInquiry }) {
     <>
       <section
         id="contact"
-        className="w-full px-margin lg:px-margin-desktop py-space-xl bg-surface-container-lowest border-t border-white/[0.08] scroll-mt-20"
+        className="w-full px-4 sm:px-margin lg:px-margin-desktop py-12 sm:py-space-xl bg-surface-container-lowest border-t border-white/[0.08] scroll-mt-16 sm:scroll-mt-20"
       >
         <div className="max-w-[1520px] mx-auto flex flex-col gap-space-lg">
           {/* Section Header */}
@@ -37,7 +37,7 @@ export default function ContactSection({ onCopyText, onOpenInquiry }) {
               <span className="font-label-tag text-label-tag text-primary uppercase tracking-widest block mb-space-xs">
                 05 // DIRECT CONTACT &amp; TRANSMISSION
               </span>
-              <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-bone">
+              <h2 className="font-headline-xl text-[36px] leading-[38px] sm:text-[44px] sm:leading-[46px] md:text-headline-xl uppercase text-bone">
                 GET IN TOUCH
               </h2>
             </div>
@@ -46,17 +46,6 @@ export default function ContactSection({ onCopyText, onOpenInquiry }) {
                 Available for Software QA, Testing, Full-Stack, and Scrum OJT
                 interviews and immediate placement.
               </p>
-              <button
-                type="button"
-                onClick={onOpenInquiry}
-                className="font-label-mono text-xs text-bone hover:text-primary uppercase tracking-wider inline-flex items-center gap-1 transition-colors"
-              >
-                <span className="text-primary-container">✦</span>
-                <span>SCHEDULE OJT INTERVIEW</span>
-                <span className="material-symbols-outlined text-[15px]">
-                  arrow_outward
-                </span>
-              </button>
             </div>
           </div>
 
@@ -168,22 +157,22 @@ export default function ContactSection({ onCopyText, onOpenInquiry }) {
 
       {/* Footer */}
       <footer className="w-full bg-surface-container-lowest border-t border-white/[0.08] py-space-lg">
-        <div className="w-full px-margin lg:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md">
-          <div className="flex flex-col gap-space-xs">
+        <div className="w-full px-4 sm:px-margin lg:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-space-md text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start gap-space-xs">
             <div className="flex items-center gap-space-xs">
               <span className="text-primary-container text-body-sm font-label-mono leading-none">
                 ✦
               </span>
-              <span className="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">
+              <span className="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface tracking-wider">
                 {profile.brandLabel}
               </span>
             </div>
-            <p className="font-label-tag text-label-tag text-on-surface-variant uppercase tracking-widest">
-              SOFTWARE QUALITY ASSURANCE • FULL-STACK • AGILE SCRUM
+            <p className="font-label-tag text-[9px] sm:text-label-tag text-on-surface-variant uppercase tracking-widest">
+              SOFTWARE DEVELOPMENT • QA • AGILE SCRUM
             </p>
           </div>
-          <div className="flex items-center gap-space-lg">
-            <span className="font-label-mono text-label-mono text-on-surface-variant">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-space-lg">
+            <span className="font-label-mono text-[11px] sm:text-label-mono text-on-surface-variant">
               © {profile.copyrightYear} {profile.formalFullName.toUpperCase()}
             </span>
             <span className="font-label-tag text-label-tag uppercase text-on-surface-variant bg-surface-container-low px-2 py-1 rounded border border-white/[0.08] flex items-center gap-1.5">

@@ -42,7 +42,7 @@ export default function TechnicalMatrixSection({
   return (
     <section
       id="skills"
-      className="w-full px-margin lg:px-margin-desktop py-space-xl bg-surface-container-low scroll-mt-20"
+      className="w-full px-4 sm:px-margin lg:px-margin-desktop py-12 sm:py-space-xl bg-surface-container-low scroll-mt-16 sm:scroll-mt-20"
     >
       <div className="max-w-[1520px] mx-auto flex flex-col gap-space-lg">
         {/* Section Title & Dynamic Filter Bar */}
@@ -51,14 +51,14 @@ export default function TechnicalMatrixSection({
             <span className="font-label-tag text-label-tag text-primary uppercase tracking-widest block mb-space-xs">
               03 // RUNTIME &amp; ECOSYSTEM
             </span>
-            <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-bone">
+            <h2 className="font-headline-xl text-[36px] leading-[38px] sm:text-[44px] sm:leading-[46px] md:text-headline-xl uppercase text-bone">
               TECHNICAL MATRIX
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
             {/* Search Input */}
-            <div className="relative">
+            <div className="relative w-full sm:w-auto">
               <span className="material-symbols-outlined text-[15px] text-on-surface-variant absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none">
                 search
               </span>
@@ -67,7 +67,7 @@ export default function TechnicalMatrixSection({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Filter skill..."
-                className="pl-8 pr-3 py-1 rounded bg-surface-container-lowest border border-white/10 focus:border-primary-container focus:outline-none font-label-mono text-xs text-on-surface placeholder:text-on-surface-variant/60 w-36 sm:w-44 transition-colors"
+                className="pl-8 pr-3 py-1.5 min-h-[36px] rounded bg-surface-container-lowest border border-white/10 focus:border-primary-container focus:outline-none font-label-mono text-xs text-on-surface placeholder:text-on-surface-variant/60 w-full sm:w-44 transition-colors"
               />
             </div>
 
@@ -78,7 +78,7 @@ export default function TechnicalMatrixSection({
                   key={tab.id}
                   type="button"
                   onClick={() => onSelectDomain(tab.id)}
-                  className={`px-space-sm py-1 rounded font-label-mono text-label-mono uppercase tracking-wider transition-all ${
+                  className={`px-3 py-1.5 min-h-[36px] rounded font-label-mono text-[11px] sm:text-label-mono uppercase tracking-wider transition-all ${
                     isActive
                       ? 'bg-bone text-ink font-bold shadow-[0_0_15px_rgba(237,230,216,0.2)]'
                       : 'bg-surface-container-high text-bone/70 hover:text-bone border border-bone/10'

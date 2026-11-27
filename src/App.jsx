@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import ProjectsSection from './components/ProjectsSection'
 import AboutSection from './components/AboutSection'
 import TechnicalMatrixSection from './components/TechnicalMatrixSection'
 import EducationSection from './components/EducationSection'
-import ResumeSection from './components/ResumeSection'
 import ContactSection from './components/ContactSection'
 import {
   CertificationModal,
-  InquiryModal,
   ProjectDossierModal,
-  ResumeModal,
 } from './components/Modals'
 
 const sectionIds = ['hero', 'projects', 'about', 'skills', 'education', 'contact']
@@ -20,9 +18,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('hero')
   const [activeMatrixDomain, setActiveMatrixDomain] = useState('all')
   const [selectedProjectState, setSelectedProjectState] = useState(null)
-  const [resumeOpen, setResumeOpen] = useState(false)
   const [selectedCert, setSelectedCert] = useState(null)
-  const [inquiryOpen, setInquiryOpen] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
 
   const showToast = (msg) => {
@@ -85,13 +81,11 @@ export default function App() {
       <Header
         activeSection={activeSection}
         onNavigate={handleNavigate}
-        onOpenInquiry={() => setInquiryOpen(true)}
       />
 
-      <main className="w-full pt-20 bg-background min-h-screen overflow-x-hidden">
+      <main className="w-full pt-16 sm:pt-20 bg-background min-h-screen overflow-x-clip">
         <HeroSection
           onNavigate={handleNavigate}
-          onOpenResume={() => setResumeOpen(true)}
           onSelectDomain={setActiveMatrixDomain}
         />
 
@@ -115,11 +109,8 @@ export default function App() {
           onInspectCertification={(cert) => setSelectedCert(cert)}
         />
 
-        <ResumeSection onOpenResume={() => setResumeOpen(true)} />
-
         <ContactSection
           onCopyText={handleCopyText}
-          onOpenInquiry={() => setInquiryOpen(true)}
         />
       </main>
 
@@ -135,21 +126,9 @@ export default function App() {
         onClose={() => setSelectedProjectState(null)}
       />
 
-      <ResumeModal
-        open={resumeOpen}
-        onClose={() => setResumeOpen(false)}
-        onDownloadToast={showToast}
-      />
-
       <CertificationModal
         certification={selectedCert}
         onClose={() => setSelectedCert(null)}
-      />
-
-      <InquiryModal
-        open={inquiryOpen}
-        onClose={() => setInquiryOpen(false)}
-        onSubmitSuccess={showToast}
       />
 
       {/* Obsidian Crimson Toast */}
@@ -161,6 +140,8 @@ export default function App() {
           </span>
         </div>
       )}
+
+      <Analytics />
     </div>
   )
 }

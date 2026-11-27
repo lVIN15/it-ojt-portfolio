@@ -5,29 +5,29 @@ export default function EducationSection({ onInspectCertification }) {
   return (
     <section
       id="education"
-      className="w-full px-margin lg:px-margin-desktop py-space-xl bg-bone text-ink scroll-mt-20 border-y border-bone-border"
+      className="w-full px-4 sm:px-margin lg:px-margin-desktop py-12 sm:py-space-xl bg-bone text-ink scroll-mt-16 sm:scroll-mt-20 border-y border-bone-border"
     >
-      <div className="max-w-[1520px] mx-auto flex flex-col gap-space-xl">
+      <div className="max-w-[1520px] mx-auto flex flex-col gap-8 sm:gap-space-xl">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-bone-border pb-space-md">
           <div>
             <span className="font-label-tag text-label-tag text-primary-container uppercase tracking-widest block mb-space-xs">
               04 // ACADEMICS &amp; CREDENTIALS
             </span>
-            <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-ink">
+            <h2 className="font-headline-xl text-[36px] leading-[38px] sm:text-[44px] sm:leading-[46px] md:text-headline-xl uppercase text-ink">
               EDUCATION &amp; CERTIFICATIONS
             </h2>
           </div>
-          <p className="font-body-md text-body-md text-ink-muted max-w-md">
+          <p className="font-body-sm sm:font-body-md sm:text-body-md text-ink-muted max-w-md">
             Formal BSIT academic honors paired with verified Java, IBM AI, and
             AWS Academy credentials.
           </p>
         </div>
 
         {/* 2-Column Split on Crisp Bone Paper Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-space-lg">
           {/* Column 1: Academic Background (6 cols) */}
-          <div className="lg:col-span-6 bg-bone-light p-space-lg rounded-xl border border-bone-border flex flex-col justify-between shadow-[0_8px_30px_rgba(19,19,21,0.05)]">
+          <div className="lg:col-span-6 bg-bone-light p-5 sm:p-space-lg rounded-xl border border-bone-border flex flex-col justify-between shadow-[0_8px_30px_rgba(19,19,21,0.05)]">
             <div className="space-y-space-md">
               <div className="flex items-center justify-between pb-space-xs border-b border-bone-border">
                 <span className="font-headline-sm text-headline-sm uppercase text-ink flex items-center gap-2">
@@ -71,7 +71,7 @@ export default function EducationSection({ onInspectCertification }) {
               </div>
             </div>
 
-            <div className="pt-space-md mt-space-md border-t border-bone-border flex items-center justify-between font-label-mono text-xs">
+            <div className="pt-space-md mt-space-md border-t border-bone-border flex flex-wrap items-center justify-between gap-2 font-label-mono text-xs">
               <span className="text-ink-muted">Recognition:</span>
               <span className="text-primary-container font-bold">
                 Dean&apos;s List • With High Honors
@@ -80,7 +80,7 @@ export default function EducationSection({ onInspectCertification }) {
           </div>
 
           {/* Column 2: Professional Certifications (6 cols) */}
-          <div className="lg:col-span-6 bg-bone-light p-space-lg rounded-xl border border-bone-border flex flex-col justify-between shadow-[0_8px_30px_rgba(19,19,21,0.05)]">
+          <div className="lg:col-span-6 bg-bone-light p-5 sm:p-space-lg rounded-xl border border-bone-border flex flex-col justify-between shadow-[0_8px_30px_rgba(19,19,21,0.05)]">
             <div className="space-y-space-md">
               <div className="flex items-center justify-between pb-space-xs border-b border-bone-border">
                 <span className="font-headline-sm text-headline-sm uppercase text-ink flex items-center gap-2">
@@ -111,7 +111,7 @@ export default function EducationSection({ onInspectCertification }) {
                         onClick={() => onInspectCertification(cert)}
                         className="font-label-tag text-[10px] text-ink hover:text-primary-container uppercase tracking-wider underline underline-offset-4 transition-colors font-bold"
                       >
-                        [DETAILS]
+                        [VIEW CERTIFICATE]
                       </button>
                     </div>
                   </div>
@@ -119,10 +119,10 @@ export default function EducationSection({ onInspectCertification }) {
               </div>
             </div>
 
-            <div className="pt-space-md mt-space-md border-t border-bone-border flex items-center justify-between font-label-mono text-xs">
+            <div className="pt-space-md mt-space-md border-t border-bone-border flex flex-wrap items-center justify-between gap-2 font-label-mono text-xs">
               <span className="text-ink-muted">Verification:</span>
               <span className="text-ink font-bold">
-                5 Verified Certificates &amp; Badges
+                {certifications.length} Verified Certificates &amp; Badges
               </span>
             </div>
           </div>

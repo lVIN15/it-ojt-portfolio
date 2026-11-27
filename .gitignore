@@ -5,8 +5,9 @@ node_modules/
 dist/
 dist-ssr/
 
-# Local Stitch scratch exports
+# Local Stitch scratch exports & non-public certificate originals
 stitch-assets/
+private-originals/
 
 # Logs & OS files
 *.log

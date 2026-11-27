@@ -7,20 +7,20 @@ export default function AboutSection({ onSelectDomain, onNavigate }) {
   return (
     <section
       id="about"
-      className="w-full px-margin lg:px-margin-desktop py-space-xl bg-bone text-ink relative scroll-mt-20 border-y border-bone-border"
+      className="w-full px-4 sm:px-margin lg:px-margin-desktop py-12 sm:py-space-xl bg-bone text-ink relative scroll-mt-16 sm:scroll-mt-20 border-y border-bone-border"
     >
-      <div className="max-w-[1520px] mx-auto flex flex-col gap-space-xl">
+      <div className="max-w-[1520px] mx-auto flex flex-col gap-8 sm:gap-space-xl">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-bone-border pb-space-md">
           <div>
             <span className="font-label-tag text-label-tag text-primary-container uppercase tracking-widest block mb-space-xs">
               02 // ABOUT &amp; EXPERIENCE
             </span>
-            <h2 className="font-headline-xl text-[44px] leading-[46px] md:text-headline-xl uppercase text-ink">
+            <h2 className="font-headline-xl text-[36px] leading-[38px] sm:text-[44px] sm:leading-[46px] md:text-headline-xl uppercase text-ink">
               ADAPTABILITY SPECTRUM
             </h2>
           </div>
-          <p className="font-body-md text-body-md text-ink-muted max-w-md">
+          <p className="font-body-sm sm:font-body-md sm:text-body-md text-ink-muted max-w-md">
             Grounded in Software Quality Assurance, formal SRS/SDD
             documentation, Agile Scrum facilitation, and full-stack software
             delivery.
@@ -28,9 +28,9 @@ export default function AboutSection({ onSelectDomain, onNavigate }) {
         </div>
 
         {/* 2-Column Responsive Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-space-lg items-stretch">
           {/* Left: Candidate Foundation & Inset Obsidian Work Experience (5 cols) */}
-          <div className="lg:col-span-5 bg-bone-light p-space-lg rounded-xl border border-bone-border flex flex-col justify-between gap-space-md shadow-[0_8px_30px_rgba(19,19,21,0.06)]">
+          <div className="lg:col-span-5 bg-bone-light p-5 sm:p-space-lg rounded-xl border border-bone-border flex flex-col justify-between gap-space-md shadow-[0_8px_30px_rgba(19,19,21,0.06)]">
             <div className="space-y-space-md">
               <div className="flex items-center justify-between">
                 <span className="font-label-tag text-label-tag text-primary-container uppercase tracking-widest">
@@ -70,7 +70,7 @@ export default function AboutSection({ onSelectDomain, onNavigate }) {
             </div>
 
             <div className="pt-space-md border-t border-bone-border space-y-2">
-              <div className="flex items-center justify-between text-body-sm gap-2">
+              <div className="flex flex-wrap items-center justify-between text-xs sm:text-body-sm gap-1 sm:gap-2">
                 <span className="text-ink-muted font-label-mono">
                   Academic Standing:
                 </span>
@@ -78,7 +78,7 @@ export default function AboutSection({ onSelectDomain, onNavigate }) {
                   Dean&apos;s List (2025–2026)
                 </span>
               </div>
-              <div className="flex items-center justify-between text-body-sm gap-2">
+              <div className="flex flex-wrap items-center justify-between text-xs sm:text-body-sm gap-1 sm:gap-2">
                 <span className="text-ink-muted font-label-mono">
                   Leadership:
                 </span>
@@ -86,12 +86,12 @@ export default function AboutSection({ onSelectDomain, onNavigate }) {
                   {leadership.role} ({leadership.period})
                 </span>
               </div>
-              <div className="flex items-center justify-between text-body-sm gap-2">
+              <div className="flex flex-wrap items-center justify-between text-xs sm:text-body-sm gap-1 sm:gap-2">
                 <span className="text-ink-muted font-label-mono">
                   OJT Status:
                 </span>
                 <span className="text-ink font-label-mono font-bold flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse shrink-0" />
                   {academicFoundation.status}
                 </span>
               </div>
